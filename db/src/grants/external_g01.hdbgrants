@@ -1,0 +1,13 @@
+{
+    "HDI_Sample_Test": {
+       "object_owner": {
+            "schema_roles" :[
+                {"schema":"SAMPLE_TEST01","roles": ["admin#","viewer"]}
+            ]
+        },
+        "application_user": {"schema_roles":[
+            {"schema": "SAMPLE_TEST01", "roles": ["viewer"]}
+        ]}
+       
+    }
+}

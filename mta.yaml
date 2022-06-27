@@ -1,0 +1,26 @@
+_schema-version: "2.1"
+ID: Sample_Test02
+version: 0.0.1
+modules:
+- name: Sample_Test02-db
+  type: hdb
+  path: db
+  requires:
+  - name: HDI_Sample_Test02
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: HDI_Sample_Test
+resources:
+- name: HDI_Sample_Test02
+  type: com.sap.xs.hdi-container
+  parameters:
+    service_name: HDI_Sample_Test02
+    config:
+      schema: HDI_TRAINEE
+      makeUniqueName: false
+  properties:
+    hdi-container-name: ${service-name}
+- name: HDI_Sample_Test
+  type: org.cloudfoundry.existing-service
+  parameters:
+      service-name: HDI_Sample_Test
